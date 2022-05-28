@@ -1,8 +1,8 @@
-# AM Coding Challenge - Frontend (React)
+# AM Coding Challenge - Frontend (VueJS)
 
 ## The case study: Product Order Dashboard
 
-![AM Order Dashboard Challenge](https://github.com/AM-code-treasure/coding-challenge-frontend-react/blob/main/Order-Dashboard-v2.png)
+![AM Order Dashboard Challenge](https://github.com/AM-code-treasure/coding-challenge-frontend/blob/main/Order-Dashboard-v2.png)
 
 Monitoring their order target vs. actual orders is a typical problem for growing product businesses.
 To tackle that challenge, BLACK PRODUCTS Inc. wants to build an "order dashboard" - the software you will develop!
@@ -33,14 +33,14 @@ As an employee at BLACK PRODUCTS Inc.,
 
 ## Your Mission
 
-Create the React application that satisfies all must-have requirements above, plus any nice-to-have requirements you wish to include.
+Create the application that satisfies all must-have requirements above, plus any nice-to-have requirements you wish to include.
 
 For that, you’ll need to use the [Google-Sheet API](https://developers.google.com/sheets/api) and fetch the data from this publicly-available [Spreadsheet](https://docs.google.com/spreadsheets/d/1La-EJVOrNt3AwWHYvhuCQ5SRtFE9h_kYjgx0dau1HN4/edit?usp=sharing) that contains all the order data.
 
 For the design of the dashboard, please refer to the provided [Figma](https://www.figma.com/file/bJINBUw3xoVfpbQ1BkPzs6/Untitled?node-id=1%3A2)
 We expect a pixel-perfect design. If you are not able to implement a particular requirement, please provide a description of what and why you could not implement.
 
-You can use any boilerplate/approach you prefer (nextjs, create react app, ...), but try to keep it simple. We encourage you to use your favorite tools and packages to build a solid React application.
+You can use any VueJS boilerplate/approach you prefer, but try to keep it simple. We encourage you to use your favorite tools and packages to build a solid application.
 
 You can assume that you do not have to support legacy browsers. Feel free to use modern features such as **fetch** or **flexbox**.
 
@@ -49,10 +49,8 @@ Please include a description in the README.md how to run the project locally.
 
 ## Tech Requirements
 
-- React
-- Tests: Jest
+- VueJS (Typescript)
 - Code Linter
-- Typescript is a plus
 - CSSinJS is a plus: styled-components, styled-system, ...
 
 ## Instructions
