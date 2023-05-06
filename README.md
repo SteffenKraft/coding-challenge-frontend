@@ -50,10 +50,9 @@ Please include a description in the README.md how to run the project locally.
 ## Tech Requirements
 
 - Next.js with Typescript
-- Use XSTATE (Alternative Redux)
 - Tests: Jest
 - Code Linter
-- InlineCSS is a plus: styled-components, styled-system, ...
+- Bonus: Use XSTATE
 
 ## Instructions
 
