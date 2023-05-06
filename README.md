@@ -25,9 +25,9 @@ As an employee at BLACK PRODUCTS Inc.,
   - [ ] the order volume
 - [ ] I want to see the top 5 products for the time period
 - [ ] For each top product, I want to see
-  - [ ] the name of the product
-  - [ ] the sum of all orders of that product 
-  - [ ] a progress bar to display the percentage that the product had on the total order volume
+  - [ ] the name
+  - [ ] the total order volume of all orders
+  - [ ] a bar that shows the share in percent of this product on the total order volume for the month
 - [ ] The dashboard refreshes regularly and displays a counter, when the next refresh will happen
 
 
@@ -40,7 +40,7 @@ For that, you’ll need to use the [Google-Sheet API](https://developers.google.
 For the design of the dashboard, please refer to the provided [Figma](https://www.figma.com/file/bJINBUw3xoVfpbQ1BkPzs6/Untitled?node-id=1%3A2)
 We expect a pixel-perfect design. If you are not able to implement a particular requirement, please provide a description of what and why you could not implement.
 
-You can use any boilerplate/approach you prefer (nextjs, create react app, ...), but try to keep it simple. We encourage you to use your favorite tools and packages to build a solid React application.
+You can use any boilerplate/approach you prefer, but try to keep it simple. We encourage you to use your favorite tools and packages to build a solid application.
 
 You can assume that you do not have to support legacy browsers. Feel free to use modern features such as **fetch** or **flexbox**.
 
@@ -49,11 +49,11 @@ Please include a description in the README.md how to run the project locally.
 
 ## Tech Requirements
 
-- React + Typescript 
-- use Redux to store the state 
+- Next.js with Typescript
+- Use XSTATE (Alternative Redux)
 - Tests: Jest
 - Code Linter
-- CSSinJS is a plus: styled-components, styled-system, ...
+- InlineCSS is a plus: styled-components, styled-system, ...
 
 ## Instructions
 
