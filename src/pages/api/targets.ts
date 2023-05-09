@@ -2,9 +2,18 @@ import { google } from "googleapis";
 import type { NextApiRequest, NextApiResponse } from "next";
 import keys from "../../../key.json";
 
+type TTargetsResponseObject = {
+  id: string;
+  amount: number;
+};
+
+export type TTargetsResponse = {
+  data: TTargetsResponseObject[] | undefined;
+};
+
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<any>
+  res: NextApiResponse<TTargetsResponse>
 ) {
   const client = new google.auth.JWT(
     keys.client_email,

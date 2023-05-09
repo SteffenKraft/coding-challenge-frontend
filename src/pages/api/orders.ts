@@ -1,10 +1,11 @@
 import { google } from "googleapis";
 import type { NextApiRequest, NextApiResponse } from "next";
 import keys from "../../../key.json";
+import { TOrdersResponse } from "@/types";
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<any>
+  res: NextApiResponse<TOrdersResponse>
 ) {
   const client = new google.auth.JWT(
     keys.client_email,
