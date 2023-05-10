@@ -9,6 +9,7 @@ import {
 } from "@/types";
 import TopProductsBox from "@/components/TopProductsBox/TopProductsBox";
 import Navigation from "@/components/Navigation/Navigation";
+import Total from "../../components/Total/Total";
 
 type Props = {
   params: { year: string; month: string };
@@ -44,6 +45,7 @@ export default function Home({
             currency: "EUR",
           })}
         </div>
+        <Total total={total} />
         <Navigation
           month={params.month}
           year={params.year}
