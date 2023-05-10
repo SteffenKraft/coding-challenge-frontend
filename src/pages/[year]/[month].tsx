@@ -1,6 +1,5 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
-import Link from "next/link";
 import RecentOrdersBox from "@/components/RecentOrdersBox/RecentOrdersBox";
 import {
   TOrdersResponse,
@@ -8,8 +7,8 @@ import {
   TParams,
   TTargetsResponseObject,
 } from "@/types";
-import { useDeferredValue, useEffect, useState } from "react";
 import TopProductsBox from "@/components/TopProductsBox/TopProductsBox";
+import Navigation from "@/components/Navigation/Navigation";
 
 type Props = {
   params: { year: string; month: string };
@@ -25,21 +24,10 @@ export default function Home({
   maxTarget,
 }: Props) {
   const total = monthOrders.reduce((acc, curr) => acc + curr.amount, 0);
-  const monthNumber = parseInt(params.month);
-  const yearNumber = parseInt(params.year);
-  const previousYear = monthNumber === 1 ? yearNumber - 1 : yearNumber;
-  const previousMonth = monthNumber === 1 ? 12 : monthNumber - 1;
-  const nextYear = monthNumber === 12 ? yearNumber + 1 : yearNumber;
-  const nextMonth = monthNumber === 12 ? 1 : monthNumber + 1;
-  const currentMonthString = monthTarget.id;
+  const monthLong = monthTarget.id;
   return (
     <>
       <main className={styles.main}>
-        <Link href={`/${previousYear}/${previousMonth}`}>Prev</Link>
-        <Link href={`/${nextYear}/${nextMonth}`}>Next</Link>
-        <div>
-          {currentMonthString} {yearNumber}
-        </div>
         <div>Max Target: {maxTarget}</div>
         <div>
           Total{" "}
@@ -56,6 +44,11 @@ export default function Home({
             currency: "EUR",
           })}
         </div>
+        <Navigation
+          month={params.month}
+          year={params.year}
+          monthLong={monthLong}
+        />
         <RecentOrdersBox title="5 Recent Orders" orders={monthOrders} />
         <TopProductsBox title="Top 5 Products" orders={monthOrders} />
       </main>
