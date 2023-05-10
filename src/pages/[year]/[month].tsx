@@ -8,6 +8,7 @@ import {
   TTargetsResponseObject,
 } from "@/types";
 import TopProductsBox from "@/components/TopProductsBox/TopProductsBox";
+import TargetProgressBar from "@/components/TargetProgressBar/TargetProgressBar";
 import Navigation from "@/components/Navigation/Navigation";
 import Total from "../../components/Total/Total";
 
@@ -51,6 +52,11 @@ export default function Home({
           monthLong={monthLong}
         />
         <Total total={total} />
+        <TargetProgressBar
+          currentTotal={total}
+          maxTargetTotal={maxTarget}
+          monthTargetTotal={monthTarget.amount}
+        />
         <div className={styles.OrderBoxes}>
           <RecentOrdersBox title="5 Recent Orders" orders={monthOrders} />
           <TopProductsBox

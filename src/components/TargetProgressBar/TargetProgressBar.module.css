@@ -1,0 +1,26 @@
+.wrapper {
+  width: 100%;
+  background: #2f2f2f;
+  height: 47px;
+  position: relative;
+}
+
+.progress {
+  background: #2066d2;
+  height: 47px;
+}
+
+.monthTarget {
+  background: #c4c4c4;
+  height: 67px;
+  position: absolute;
+  top: -13px;
+  width: 6px;
+  height: 79px;
+}
+
+.monthTargetValue {
+  position: absolute;
+  top: -30px;
+  left: -35px;
+}
