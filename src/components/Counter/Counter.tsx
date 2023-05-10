@@ -15,7 +15,7 @@ const Counter: React.FC = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       window.location.reload();
-    }, countdown * 1000);
+    }, (countdown - 1) * 1000);
 
     return () => clearTimeout(timeout);
   }, [countdown]);

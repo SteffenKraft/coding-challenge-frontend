@@ -4,9 +4,11 @@
 }
 
 .text {
-  margin-right: 6px;
+  margin-right: 3px;
 }
 
 .counter {
   font-weight: 700;
+  width: 30px;
+  text-align: right;
 }
