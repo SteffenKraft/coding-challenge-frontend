@@ -10,6 +10,7 @@ import {
 import TopProductsBox from "@/components/TopProductsBox/TopProductsBox";
 import TargetProgressBar from "@/components/TargetProgressBar/TargetProgressBar";
 import Navigation from "@/components/Navigation/Navigation";
+import Counter from "@/components/Counter/Counter";
 import Total from "../../components/Total/Total";
 
 type Props = {
@@ -29,28 +30,15 @@ export default function Home({
   const monthLong = monthTarget.id;
   return (
     <>
-      <main>
-        <div>Max Target: {maxTarget}</div>
-        <div>
-          Total{" "}
-          {total.toLocaleString("de-DE", {
-            style: "currency",
-            currency: "EUR",
-          })}
+      <main className={styles.main}>
+        <div className={styles.topSection}>
+          <Navigation
+            month={params.month}
+            year={params.year}
+            monthLong={monthLong}
+          />
+          <Counter />
         </div>
-
-        <div>
-          Monthly Target:{" "}
-          {monthTarget.amount.toLocaleString("de-DE", {
-            style: "currency",
-            currency: "EUR",
-          })}
-        </div>
-        <Navigation
-          month={params.month}
-          year={params.year}
-          monthLong={monthLong}
-        />
         <Total total={total} />
         <TargetProgressBar
           currentTotal={total}

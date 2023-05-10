@@ -1,0 +1,12 @@
+.wrapper {
+  font-size: 20px;
+  display: flex;
+}
+
+.text {
+  margin-right: 6px;
+}
+
+.counter {
+  font-weight: 700;
+}
