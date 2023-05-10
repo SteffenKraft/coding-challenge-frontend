@@ -11,7 +11,7 @@ type TRecentOrdersBox = {
 
 const RecentOrdersBox: React.FC<TRecentOrdersBox> = ({ title, orders }) => {
   const ordersByDate = [...(orders ?? [])].sort(
-    (a, b) => new Date(a.date).getDate() - new Date(b.date).getDate()
+    (a, b) => new Date(b.date).getDate() - new Date(a.date).getDate()
   );
 
   return (

@@ -1,0 +1,5 @@
+.OrderBoxes {
+  display: flex;
+  margin: 0 -36px;
+  gap: 17px;
+}

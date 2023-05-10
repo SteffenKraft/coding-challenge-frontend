@@ -1,5 +1,5 @@
 import Head from "next/head";
-import styles from "@/styles/Home.module.css";
+import styles from "@/styles/Dashboard.module.css";
 import RecentOrdersBox from "@/components/RecentOrdersBox/RecentOrdersBox";
 import {
   TOrdersResponse,
@@ -28,7 +28,7 @@ export default function Home({
   const monthLong = monthTarget.id;
   return (
     <>
-      <main className={styles.main}>
+      <main>
         <div>Max Target: {maxTarget}</div>
         <div>
           Total{" "}
@@ -45,14 +45,20 @@ export default function Home({
             currency: "EUR",
           })}
         </div>
-        <Total total={total} />
         <Navigation
           month={params.month}
           year={params.year}
           monthLong={monthLong}
         />
-        <RecentOrdersBox title="5 Recent Orders" orders={monthOrders} />
-        <TopProductsBox title="Top 5 Products" orders={monthOrders} />
+        <Total total={total} />
+        <div className={styles.OrderBoxes}>
+          <RecentOrdersBox title="5 Recent Orders" orders={monthOrders} />
+          <TopProductsBox
+            title="Top 5 Products"
+            orders={monthOrders}
+            total={total}
+          />
+        </div>
       </main>
     </>
   );
