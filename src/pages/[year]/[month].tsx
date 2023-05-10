@@ -8,6 +8,8 @@ import {
   TParams,
   TTargetsResponseObject,
 } from "@/types";
+import { useDeferredValue, useEffect, useState } from "react";
+import TopProductsBox from "@/components/TopProductsBox/TopProductsBox";
 
 type Props = {
   params: { year: string; month: string };
@@ -22,13 +24,7 @@ export default function Home({
   monthTarget,
   maxTarget,
 }: Props) {
-  const ordersByDate = [...monthOrders]?.sort(
-    (a, b) => new Date(a.date).getDate() - new Date(b.date).getDate()
-  );
-
-  const ordersByAmount = monthOrders.sort((a, b) => b.amount - a.amount);
-  const total = ordersByDate.reduce((acc, curr) => acc + curr.amount, 0);
-
+  const total = monthOrders.reduce((acc, curr) => acc + curr.amount, 0);
   const monthNumber = parseInt(params.month);
   const yearNumber = parseInt(params.year);
   const previousYear = monthNumber === 1 ? yearNumber - 1 : yearNumber;
@@ -52,21 +48,7 @@ export default function Home({
             currency: "EUR",
           })}
         </div>
-        {ordersByAmount.slice(0, 5).map((orderByAmount) => {
-          const dateObj = new Date(orderByAmount.date);
-          const month = dateObj.getMonth() + 1;
-          const day = dateObj.getDate();
-          const year = dateObj.getFullYear();
-          return (
-            <div key={crypto.randomUUID()}>
-              {day}.{month}.{year}{" "}
-              {orderByAmount.amount.toLocaleString("de-DE", {
-                style: "currency",
-                currency: "EUR",
-              })}
-            </div>
-          );
-        })}
+
         <div>
           Monthly Target:{" "}
           {monthTarget.amount.toLocaleString("de-DE", {
@@ -74,7 +56,8 @@ export default function Home({
             currency: "EUR",
           })}
         </div>
-        <RecentOrdersBox title="5 Recent Orders" orders={ordersByDate} />
+        <RecentOrdersBox title="5 Recent Orders" orders={monthOrders} />
+        <TopProductsBox title="Top 5 Products" orders={monthOrders} />
       </main>
     </>
   );

@@ -2,7 +2,7 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import { Montserrat } from "@next/font/google";
 import Image from "next/image";
-import twitterIcon from "../../public/ellipse.svg";
+import ellipse from "../../public/ellipse.svg";
 import styles from "@/styles/App.module.css";
 import "@/styles/globals.css";
 
@@ -25,8 +25,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <div className={`${styles.main} ${montserrat.className}`}>
         <Image
-          priority
-          src={twitterIcon}
+          src={ellipse}
           alt="Follow us on Twitter"
           className={styles.ellipse}
         />

@@ -7,6 +7,7 @@
 .ellipse {
   position: absolute;
   width: 600px;
+  height: auto;
   right: 0;
   top: -98.42px;
 }
