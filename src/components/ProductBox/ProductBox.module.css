@@ -1,0 +1,21 @@
+.box {
+  padding: 27px 35px;
+  height: 280px;
+  width: 100%;
+  background: #26262c;
+  color: #fafafa;
+}
+
+.title {
+  font-size: 20px;
+  line-height: 25px;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.line {
+  height: 2px;
+  width: 100%;
+  background: #c4c4c4;
+  margin-bottom: 23px;
+}

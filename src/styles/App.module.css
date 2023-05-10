@@ -1,0 +1,12 @@
+.main {
+  padding: 16px;
+  min-height: 100vh;
+  color: #fff;
+}
+
+.ellipse {
+  position: absolute;
+  width: 600px;
+  right: 0;
+  top: -98.42px;
+}

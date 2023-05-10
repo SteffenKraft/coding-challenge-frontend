@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
+import RecentOrdersBox from "@/components/RecentOrdersBox/RecentOrdersBox";
 import {
   TOrdersResponse,
   TOrdersResponseObject,
@@ -44,22 +45,6 @@ export default function Home({
           {currentMonthString} {yearNumber}
         </div>
         <div>Max Target: {maxTarget}</div>
-        {ordersByDate.map((orderByDate) => {
-          const dateObj = new Date(orderByDate.date);
-
-          const month = dateObj.getMonth() + 1;
-          const day = dateObj.getDate();
-          const year = dateObj.getFullYear();
-          return (
-            <div key={crypto.randomUUID()}>
-              {day}.{month}.{year}{" "}
-              {orderByDate.amount.toLocaleString("de-DE", {
-                style: "currency",
-                currency: "EUR",
-              })}
-            </div>
-          );
-        })}
         <div>
           Total{" "}
           {total.toLocaleString("de-DE", {
@@ -89,6 +74,7 @@ export default function Home({
             currency: "EUR",
           })}
         </div>
+        <RecentOrdersBox title="5 Recent Orders" orders={ordersByDate} />
       </main>
     </>
   );

@@ -1,15 +1,7 @@
 import { google } from "googleapis";
 import type { NextApiRequest, NextApiResponse } from "next";
 import keys from "../../../key.json";
-
-type TTargetsResponseObject = {
-  id: string;
-  amount: number;
-};
-
-export type TTargetsResponse = {
-  data: TTargetsResponseObject[] | undefined;
-};
+import { TTargetsResponse } from "@/types";
 
 export default function handler(
   req: NextApiRequest,
